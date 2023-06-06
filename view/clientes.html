@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <!-- <div class="row"> -->
+    <div>
+        <nav class="navbar navbar-dark bg-dark fixed-top mb-5">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">CLIENTES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+           
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="./hotel.php">- Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="./alquiler.html">- Alquiler</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="./historial.html">- Historial de Alquiler</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        
+        <div class="container mt-3" id="container">
+
+        <div class="card col-12 mt-5 " id="header">
+        <div class="card-header bg-dark text-center text-white" >
+          <h3>REGISTRO DE CLIENTE</h3>
+        </div>
+        <table class=" col-6 table mb-5" id="tabla-alquiler">
+        <div class="col-12">
+
+
+            
+          </div>
+
+        </div>
+        <div class="card-body col-5">
+          <div class="modal">
+            
+          </div>
+        </div>
+        
+
+        </div>
+
+        
+      <thead id="tabla-clientes">
+        <tr>
+          <th>idcliente</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Nombres</th>
+          <th>Tipo de Documento</th>
+          <th>Numero de documento</th>
+          <th>Telefono</th>
+          <th>Comandos</th>
+        </tr>
+
+      </thead>
+
+ 
+
+      
+      <tbody>
+          <!-- Button trigger modal -->
+
+      </tbody>
+
+        </div>
+
+        <!-- Modal trigger button -->
+        <button type="button" class="btn btn-secondary btn-lg bg-dark" data-bs-toggle="modal" data-bs-target="#modalId">
+          Registrar Alquiler
+        </button>
+        
+        <!-- Modal Body -->
+        <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+        <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Registro de Alquiler</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form action="" id="cliente">
+              <div class="mb-5 form-control   text-center" id="form-clientes" >
+                <div class="mb-3">
+                <label for="">Apellidos</label>
+                <input class="form-control " type="text" id="apellidos">
+              </div>
+                
+              <div class="mb-3">
+                <label for="">Nombres</label>
+                <input type="text" class="form-control" id="nombre">
+              </div>
+
+              <div class="mb-3">
+
+                <label for="">Tipo de documento</label>
+                <select name="" id="tipo" class="form-select">
+                  <option value="">Seleccione</option>
+                  <option value="DNI">DNI</option>
+                  <option value="CE">CE</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="mb-3">
+                <label for="">Numero de documento</label>
+                <input class="form-control" type="text" maxlength="10" id="documento">
+              </div>  
+
+              <div class="mb-3">
+                <label for="">Telefono</label>
+                <input class="form-control" type="text" id="telefono">
+              </div>
+              </div>
+            </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", ()=>{
+            
+            const cuerpoTabla = document.querySelector("tbody");
+            const tabla = document.querySelector("#tabla-clientes");
+            const btGuardar = document.querySelector("#guardar")
+            
+
+            function mostrarClientes(){
+              const parametros = new URLSearchParams();
+              parametros.append("operacion", "listar");
+
+              fetch('../controller/clientes.php',{
+                method: 'POST',
+                body: parametros
+              })
+              .then(response => response.json())
+              .then(datos => {
+                cuerpoTabla.innerHTML = ``;
+                datos.forEach(element => {
+                  const fila = ` 
+                  <tr>
+                    <td>${element.idcliente}</td>  
+                    <td>${element.apellidos}</td>  
+                         <td>${element.nombres}</td>  
+                         <td>${element.tipo_documento}</td>  
+                         <td>${element.num_documento}</td> 
+                         <td>${element.telefono}</td>  
+                         <td>
+                          <a href='#' class='editar btn btn-info btn-sm' data-iddocente='${element.idcliente}'>Editar</a>
+                       </td> 
+                </tr>
+                  `;
+                  cuerpoTabla.innerHTML +=fila;
+                });
+              }) .catch(error => {
+                cuerpoTabla.innerHTML = ``;
+                alert('No encontramos datos')
+              });
+            }
+
+            function registrarClientes(){
+              if(confirm("¿Esta seguro de registrar?")){
+                const parametros = new URLSearchParams();
+                parametros.append("operacion", "registrar");
+                parametros.append("apellidos",document.querySelector("#apellidos").value);
+                parametros.append("nombres",document.querySelector("#nombre").value);
+                parametros.append("tipo_documento",document.querySelector("#tipo").value);
+                parametros.append("num_documento",document.querySelector("#documento").value);
+                parametros.append("telefono",document.querySelector("#telefono").value);
+                
+                fetch("../controller/clientes.php",{
+                  method: 'POST',
+                  body:parametros
+                })
+                .then(response => response.json())
+                .then(datos =>{
+                  if(datos.status){
+                    mostrarClientes();
+                    document.querySelector("#form").reset();
+                  document.querySelector("#apellidos").focus();
+                  }else{
+                    alert(datos.message);
+                  }
+                    
+                });
+              }
+            }
+            btGuardar.addEventListener("click", registrarClientes);
+            mostrarClientes();
+          });
+
+
+        </script>
+        
+</body>
+</html>
