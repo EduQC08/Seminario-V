@@ -226,7 +226,7 @@
             })
             .then(response => response.json())
             .then(datos => {
-              
+              cuerpoTabla.innerHTML = ``;
               datos.forEach(element => {
                 const fila =`
                 <tr>
@@ -262,6 +262,7 @@
             })
             .then(respuesta => respuesta.json())
             .then(datos => {
+              
               datos.forEach(element => {
                 const optionTag = document.createElement("option");
                 optionTag.value = element.idhabitacion;
